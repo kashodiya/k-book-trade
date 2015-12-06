@@ -7,9 +7,9 @@ I could not run on 9c.io because of memory limits.
 
 ## Screen Shots
 ### Book Trade
-![Alt text](/docs/book-trade.png?raw=true =600x)
+<img src="/docs/book-trade.png?raw=true" width="600px" />
 ### User Profile
-![Alt text](/docs/user-profile.png?raw=true =600x)
+<img src="/docs/user-profile.png?raw=true" width="600px" />
 
 ## Getting Started
 
