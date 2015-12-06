@@ -79,7 +79,7 @@ exports.create = function(req, res) {
   console.log(req.user);
   var b = {
     title: req.body.title,
-    addedOn: new Date,
+    addedOn: new Date(),
     owner: req.user.email
   };
   

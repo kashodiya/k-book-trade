@@ -1,13 +1,17 @@
 'use strict';
 
 class SettingsController {
+  
   //start-non-standard
-  errors = {};
-  submitted = false;
-  //end-non-standard
-  submittedProfile = false;
+//  errors = {};
+//  submitted = false;
+//  //end-non-standard
+//  submittedProfile = false;
 
   constructor(Auth) {
+    this.errors = {};
+    this.submitted = false;
+    this.submittedProfile = false;
     this.Auth = Auth;
     this.user = this.Auth.getCurrentUser();
   }
