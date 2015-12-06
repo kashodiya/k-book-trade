@@ -13,6 +13,12 @@ function UserResource($resource) {
         controller:'password'
       }
     },
+    saveProfile: {
+      method: 'PUT',
+      params: {
+        controller:'saveProfile'
+      }
+    },
     get: {
       method: 'GET',
       params: {

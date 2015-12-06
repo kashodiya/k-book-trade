@@ -5,9 +5,11 @@ class SettingsController {
   errors = {};
   submitted = false;
   //end-non-standard
+  submittedProfile = false;
 
   constructor(Auth) {
     this.Auth = Auth;
+    this.user = this.Auth.getCurrentUser();
   }
 
   changePassword(form) {
@@ -25,6 +27,26 @@ class SettingsController {
         });
     }
   }
+
+
+  changeProfile(form) {
+    this.submittedProfile = true;
+
+    if (form.$valid) {
+      this.Auth.saveProfile(this.user.city, this.user.state)
+        .then(() => {
+          this.profileFormMessage = 'Profile successfully saved.';
+          this.user = this.Auth.getCurrentUser();
+//          console.log('New user', this.user);
+        })
+        .catch(() => {
+          form.password.$setValidity('mongoose', false);
+          this.profileFormMessage = 'Error saving profile.';
+        });
+    }
+  }
+
+
 }
 
 angular.module('appApp')

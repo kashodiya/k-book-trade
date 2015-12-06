@@ -10,7 +10,8 @@ angular.module('appApp', [
   'btford.socket-io',
   'ui.router',
   'ui.bootstrap',
-  'validation.match'
+  'validation.match',
+  'angular-toasty'
 ])
   .config(function($urlRouterProvider, $locationProvider) {
     $urlRouterProvider

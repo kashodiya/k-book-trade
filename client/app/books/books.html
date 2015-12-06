@@ -1,0 +1,67 @@
+<navbar></navbar>
+
+<toasty></toasty>
+
+<div class="container">
+  <div class="well">
+    <form class="form-inline">
+      <label>Add book</label>
+      <p class="input-group">
+        <input type="text" class="form-control" placeholder="title of the book" ng-model="books.newTitle">
+        <span class="input-group-btn">
+          <button type="submit" class="btn btn-primary" ng-click="books.addBook()">Add</button>
+        </span>
+      </p>
+    </form>
+  </div>
+  <div class="well">
+    <h4>My Books</h4>
+    <table class="table table-hover">
+      <tr>
+        <th class="book-select">&#10004;</th>
+        <th>Title</th>
+        <th>Proposed Trade</th>
+        <th>Remove</th>
+      </tr> 
+      <tr ng-repeat="book in books.myBooks">
+        <td>
+          <input ng-hide="book.proposedTradeBook" 
+            type="radio" name="myBookSelect" ng-model="books.selectedMyBook" ng-value="book">
+        </td>
+        <td>{{book.title}}</td>
+        <td>{{book.proposedTradeBook.title}}</td>
+        <td>
+          <button ng-click="books.removeTrade(book)" ng-show="book.proposedTradeBook" class="btn btn-xs btn-danger">Remove Trade</button>
+        </td>
+      </tr>
+    </table>
+    <button ng-click="books.peoposeBookTrade()" ng-disabled="!books.twoBooksSelected()" class="btn btn-primary">Propose book trade</button>
+    <span ng-hide="books.twoBooksSelected()">Select a book from My Books and Available Books each.</span>
+  </div>
+  <div class="well">
+    <h4>Available Books</h4>
+    <table class="table table-hover">
+      <tr>
+        <th class="book-select">&#10004;</th>
+        <th>Title</th>
+        <th>Owner</th>
+        <th>Trade Offer</th>
+        <th></th>
+      </tr> 
+      <tr ng-repeat="book in books.books">
+        <td>
+          <input ng-hide="book.proposedTradeBook" 
+            type="radio" name="bookSelect" ng-model="books.selectedBook" ng-value="book"></td>
+        <td>{{book.title}}</td>
+        <td>{{book.owner}}</td>
+        <td>{{book.proposedTradeBook.title}}</td>
+        <td>
+          <button ng-click="books.acceptTrade(book)" ng-show="book.proposedTradeBook" class="btn btn-xs btn-danger">Accept Offer</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+  
+</div>
+
+<footer></footer>

@@ -108,6 +108,23 @@ exports.changePassword = function(req, res, next) {
     });
 };
 
+exports.saveProfile = function(req, res, next) {
+  var userId = req.user._id;
+  var city = String(req.body.city);
+  var state = String(req.body.state);
+
+  User.findByIdAsync(userId)
+    .then(function(user) {
+      user.city = city;
+      user.state = state;
+      return user.saveAsync()
+        .then(function() {
+          res.status(204).end();
+        })
+        .catch(validationError(res));
+    });
+};
+
 /**
  * Get my info
  */

@@ -87,6 +87,19 @@ function AuthService($location, $http, $cookies, $q, appConfig, Util, User) {
         return safeCb(callback)(err);
       }).$promise;
     },
+    
+    
+    saveProfile: function(city, state, callback) {
+//      console.log('saving city', city);
+      return User.saveProfile({ id: currentUser._id }, {
+        city: city,
+        state: state
+      }, function() {
+        return safeCb(callback)(null);
+      }, function(err) {
+        return safeCb(callback)(err);
+      }).$promise;
+    },
 
     /**
      * Gets all available info on a user
