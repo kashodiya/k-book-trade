@@ -5,6 +5,10 @@ This is the app developed for http://www.freecodecamp.com/map challange.
 ## Note
 I could not run on 9c.io because of memory limits.
 
+## Screen Shots
+![Alt text](/docs/book-trade.png?raw=true "Book Trade")
+![Alt text](/docs/user-profile.png?raw=true "user Profile")
+
 ## Getting Started
 
 ### Prerequisites
