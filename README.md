@@ -1,6 +1,9 @@
-# app
+# k-book-trade
 
-This project was generated with the [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 3.0.0.
+This is the app developed for http://www.freecodecamp.com/map challange.
+
+## Note
+I could not run on 9c.io because of memory limits.
 
 ## Getting Started
 
